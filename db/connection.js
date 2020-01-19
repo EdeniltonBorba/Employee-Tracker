@@ -1,5 +1,5 @@
-const util = require("util");
 const mysql = require("mysql");
+require("dotenv").config();
 
 const connection = mysql.createConnection({
   host: "localhost",
@@ -8,7 +8,8 @@ const connection = mysql.createConnection({
   database: "employees"
 });
 
-connection.connect();
-connection.query = util.promisify(connection.query);
+connection.connect(function(err) {
+  if (err) throw err;
+});
 
 module.exports = connection;
