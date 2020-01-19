@@ -1,6 +1,6 @@
 const { prompt } = require("inquirer");
 const logo = require("asciiart-logo");
-const db = require("./db/questions.js");
+const db = require("./db/index.js");
 const connection = require("./db/connection.js")
 require("console.table");
 
